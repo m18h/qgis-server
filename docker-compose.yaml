@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    gis:
+        build: .
+        container_name: qgis-server
+        environment:
+            - QGIS_SERVER_LOG_LEVEL=0  # INFO (log all requests)
+            - DEBUG=1 # display env before spawning QGIS Server
+            # - QGIS_PROJECT_FILE=/data/osm.qgs
+        ports:
+          - 5555:5555
